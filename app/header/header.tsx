@@ -12,7 +12,7 @@ export default function Header() {
           <div className='  z-10 bg-white '>
             <div className=' border-r-2 border-black px-5 shadow-lg  flex justify-between items-center'>
               <div>
-                <Image src={logo} width={60} height={60} />
+                <Image src={logo} width={60} height={60} alt='/' />
               </div>
               <div className='border-2 border-blue-700 px-6 py-1 rounded-md'>
                 <button>Login</button>
