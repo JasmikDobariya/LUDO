@@ -1,10 +1,11 @@
-
+"use client"
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import logo from '../public/assets/images/logo.png'
 import Image from 'next/image';
 import Header from "./header/header";
 import Slider from 'react-slick';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
   let settings = {
@@ -46,40 +47,33 @@ export default function Home() {
   };
 
 
-  if (typeof window !== 'undefined') {
-    let installPrompt: any = null;
+  const [installPrompt, setInstallPrompt] = useState<any>(null);
 
-    window.addEventListener("beforeinstallprompt", (event) => {
+  useEffect(() => {
+    const handleBeforeInstallPrompt = (event: any) => {
       event.preventDefault();
-      installPrompt = event;
-      const downloadButton = document.querySelector("#download-app");
-      if (downloadButton) {
-        downloadButton.removeAttribute("hidden");
+      setInstallPrompt(event);
+    };
+
+    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+
+    return () => {
+      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+    };
+  }, []);
+
+  const handleInstallButtonClick = async () => {
+    if (installPrompt) {
+      try {
+        await installPrompt.prompt();
+        // Wait for the user to respond to the prompt
+        const choiceResult = await installPrompt.userChoice;
+        console.log(choiceResult); // Log the user's choice (e.g., 'accepted' or 'dismissed')
+      } catch (error) {
+        console.error('Error prompting installation:', error);
       }
-    });
-
-    const downloadButton = document.querySelector("#download-app");
-
-    if (downloadButton) {
-      downloadButton.addEventListener("click", async () => {
-        if (!installPrompt) {
-          return;
-        }
-        // Check if prompt method exists before calling it
-        if (installPrompt.prompt) {
-          try {
-            const result = await installPrompt.prompt();
-            console.log(`Install prompt was: ${result}`);
-          } catch (error) {
-            console.error("Error prompting installation:", error);
-          }
-        }
-        installPrompt = null;
-        downloadButton.setAttribute("hidden", "");
-      });
     }
-  }
-
+  };
 
 
   return (
@@ -119,7 +113,7 @@ export default function Home() {
 
             <div className='fixed bottom-0 left-0 sm:w-[480px] w-full bg-gradient-to-r from-purple-500 to-pink-500'>
               <div className='py-2 rounded-md text-center flex justify-center items-center'>
-                <button id="download-app">DOWNLOAD OUR APP</button>
+                <button id="download-app" onClick={handleInstallButtonClick}>DOWNLOAD OUR APP</button>
               </div>
               <div className='bg-slate-600 flex justify-between w-full p-4'>
                 <div className="flex flex-col justify-center text-center items-center">
