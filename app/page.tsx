@@ -44,6 +44,44 @@ export default function Home() {
       },
     ],
   };
+
+
+  if (typeof window !== 'undefined') {
+    let installPrompt: any = null;
+
+    window.addEventListener("beforeinstallprompt", (event) => {
+      event.preventDefault();
+      installPrompt = event;
+      const downloadButton = document.querySelector("#download-app");
+      if (downloadButton) {
+        downloadButton.removeAttribute("hidden");
+      }
+    });
+
+    const downloadButton = document.querySelector("#download-app");
+
+    if (downloadButton) {
+      downloadButton.addEventListener("click", async () => {
+        if (!installPrompt) {
+          return;
+        }
+        // Check if prompt method exists before calling it
+        if (installPrompt.prompt) {
+          try {
+            const result = await installPrompt.prompt();
+            console.log(`Install prompt was: ${result}`);
+          } catch (error) {
+            console.error("Error prompting installation:", error);
+          }
+        }
+        installPrompt = null;
+        downloadButton.setAttribute("hidden", "");
+      });
+    }
+  }
+
+
+
   return (
     <><Header /><section>
 
@@ -81,7 +119,7 @@ export default function Home() {
 
             <div className='fixed bottom-0 left-0 sm:w-[480px] w-full bg-gradient-to-r from-purple-500 to-pink-500'>
               <div className='py-2 rounded-md text-center flex justify-center items-center'>
-                <button>DOWNLOAD OUR APP</button>
+                <button id="download-app">DOWNLOAD OUR APP</button>
               </div>
               <div className='bg-slate-600 flex justify-between w-full p-4'>
                 <div className="flex flex-col justify-center text-center items-center">
