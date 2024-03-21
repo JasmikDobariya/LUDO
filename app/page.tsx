@@ -66,9 +66,8 @@ export default function Home() {
     if (installPrompt) {
       try {
         await installPrompt.prompt();
-        // Wait for the user to respond to the prompt
         const choiceResult = await installPrompt.userChoice;
-        console.log(choiceResult); // Log the user's choice (e.g., 'accepted' or 'dismissed')
+        console.log(choiceResult); 
       } catch (error) {
         console.error('Error prompting installation:', error);
       }
@@ -112,8 +111,8 @@ export default function Home() {
             </div> */}
 
             <div className='fixed bottom-0 left-0 sm:w-[480px] w-full bg-gradient-to-r from-purple-500 to-pink-500'>
-              <div className='py-2 rounded-md text-center flex justify-center items-center'>
-                <button id="download-app" onClick={handleInstallButtonClick}>DOWNLOAD OUR APP</button>
+              <div className='py-2 rounded-md text-center flex justify-center items-center cursor-pointer' onClick={handleInstallButtonClick}>
+                <button>DOWNLOAD OUR APP</button>
               </div>
               <div className='bg-slate-600 flex justify-between w-full p-4'>
                 <div className="flex flex-col justify-center text-center items-center">
