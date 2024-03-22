@@ -93,7 +93,7 @@ export default function Home() {
 
       <section>
         <div className="flex ">
-          <div className="w-[480px] max-h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 md:pt-16">
+          <div className="w-[480px] max-h-screen overflow-y-auto scrollbar-thin scrollbar-thumb scrollbar-track md:pt-16">
             <Header onLoginClick={handleLoginClick} onLogoClick={handleLogoClick} />
             {showHome ? (
               <div className="p-4">

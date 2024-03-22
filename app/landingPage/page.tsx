@@ -80,7 +80,7 @@ export default function LandingPage() {
             <Landingheader />
             <section>
                 <div className='flex '>
-                    <div className='w-[480px]  h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 md:pt-16'>
+                    <div className='w-[480px]  h-screen overflow-y-auto scrollbar-thin scrollbar-thumb scrollbar-track md:pt-16'>
                         <div className='p-4'><div className='text-18px font-semibold py-4'>
                             <h1>Our Tournaments</h1>
                         </div>

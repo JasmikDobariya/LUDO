@@ -16,12 +16,12 @@ export default function Page_1() {
 
   return (
     <>
-    <Landingheader />
+      <Landingheader />
       <section>
         <div className='flex '>
           <div className='w-[480px]  h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 md:pt-16' onClick={() => { setIsOpen(false) }}>
-            <div className='text-5xl '>
-              <h1>page-1</h1>
+            <div className='flex justify-center items-center w-full h-screen'>
+                <h1 className='text-5xl'>Hello page-1</h1>
             </div>
           </div>
           <div className='max-sm:hidden border-l-4 border-[#cacaca] flex w-[65%] justify-center items-center '>
