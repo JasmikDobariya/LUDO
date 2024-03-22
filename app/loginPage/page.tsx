@@ -4,7 +4,7 @@ import React from 'react'
 export default function LoginPage() {
     return (
         <section>
-            <div className="bg-[url('/assets/images/bgimg.webp')] bg-cover bg-center h-screen w-full p-0" >
+            <div className="bg-[url('/assets/images/bgimg.webp')] bg-cover bg-center h-screen w-full "  style={{ paddingBottom: 0 }} >
                 <div className='flex flex-col gap-7 justify-center items-center h-full  backdrop-blur-sm '>
                     <div className='text-3xl text-white font-bold'>
                         <h1>

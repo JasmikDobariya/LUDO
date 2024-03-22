@@ -54,7 +54,7 @@ export function Landingheader() {
                             <span>Page-1</span>
                         </div>
                     </Link>
-                    <Link href='/page-2'>
+                    <Link  href='/page-2'>
                         <div className='hover:bg-amber-200 p-5 cursor-pointer'>
                             <span>Page-2</span>
                         </div>

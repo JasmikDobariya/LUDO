@@ -93,7 +93,7 @@ export default function Home() {
 
       <section>
         <div className="flex ">
-          <div className="w-[480px] pb-20 max-h-screen overflow-y-auto scrollbar-thin scrollbar-thumb scrollbar-track md:pt-16">
+          <div className={`w-[480px] max-h-screen overflow-y-auto scrollbar-thin scrollbar-thumb scrollbar-track md:pt-16 ${showHome ? 'pb-20' : ''}`}>
             <Header onLoginClick={handleLoginClick} onLogoClick={handleLogoClick} />
             {showHome ? (
               <div className="p-4">
@@ -129,7 +129,7 @@ export default function Home() {
                     <Image src={logo} width={210} height={210} alt="/" />
                   </div>
                 </div>
-                <div className="slider-container mt-5 md:pb-24   ">
+                <div className="slider-container mt-5  py-5   ">
                   <Slider {...settings}>
                     <div>
                       <Image src={logo} alt="/" />
