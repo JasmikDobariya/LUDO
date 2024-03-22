@@ -1,6 +1,6 @@
 "use client"
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Slider from 'react-slick'
 import Header from '../header/header';
 import logo from '../../public/assets/images/logo.png'
@@ -46,6 +46,32 @@ export default function LandingPage() {
         ],
     };
 
+    // const [installPrompt, setInstallPrompt] = useState<any>(null);
+
+    // useEffect(() => {
+    //     const handleBeforeInstallPrompt = (event: any) => {
+    //       event.preventDefault();
+    //       setInstallPrompt(event);
+    //     };
+
+    //     window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+
+    //     return () => {
+    //       window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+    //     };
+    //   }, []);
+
+    //   const handleInstallButtonClick = async () => {
+    //     if (installPrompt) {
+    //       try {
+    //         await installPrompt.prompt();
+    //         const choiceResult = await installPrompt.userChoice;
+    //         console.log(choiceResult);
+    //       } catch (error) {
+    //         console.error('Error prompting installation:', error);
+    //       }
+    //     }
+    //   };
 
 
     return (
@@ -97,9 +123,9 @@ export default function LandingPage() {
                                 </Slider>
                             </div> */}
                             <div className='fixed bottom-0 left-0 sm:w-[480px] w-full bg-gradient-to-r from-purple-500 to-pink-500'>
-                                <div className='py-2 rounded-md text-center flex justify-center items-center cursor-pointer'>
+                                {/* <div className='py-2 rounded-md text-center flex justify-center items-center cursor-pointer' onClick={handleInstallButtonClick}>
                                     <button>DOWNLOAD OUR APP</button>
-                                </div>
+                                </div> */}
                                 <div className='bg-slate-600 flex justify-between w-full px-8 p-4'>
                                     <div className="flex flex-col justify-center text-center items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1058 512" className='pl-3'>
@@ -117,7 +143,7 @@ export default function LandingPage() {
                                         </svg>
                                         <button className="mt-1 text-white text-sm">History</button>
                                     </div>
-                                    
+
                                 </div>
                             </div></div>
 
