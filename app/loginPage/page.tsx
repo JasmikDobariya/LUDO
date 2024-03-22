@@ -13,7 +13,7 @@ export default function LoginPage() {
                     </div>
                     <div className='bg-white p-5 rounded-lg'>
                         <div className='flex border-2 rounded-lg'>
-                            <div className='bg-slate-400 w-28 flex items-center p-2 text-center '>
+                            <div className='bg-slate-400 sm:w-28 flex items-center p-2 text-center '>
                                 <span>+91</span>
                             </div>
                             <div className=' '>

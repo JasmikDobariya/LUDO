@@ -50,12 +50,12 @@ export function Landingheader() {
                 <div className='flex flex-col justify-start gap-5 py-10 px-5'>
                     <Link href='/page-1'>
                         <div className='hover:bg-amber-200 p-5 cursor-pointer'>
-                            <button>Page-1</button>
+                            <span>Page-1</span>
                         </div>
                     </Link>
                     <Link href='/page-2'>
                         <div className='hover:bg-amber-200 p-5 cursor-pointer'>
-                            <button>Page-2</button>
+                            <span>Page-2</span>
                         </div>
                     </Link>
                 </div>
