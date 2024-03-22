@@ -3,7 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link';
 import React, { useState } from 'react'
 import logo from '../../public/assets/images/logo.png'
-import { Landingheader } from '../header/landingheader';
+import { Landingheader } from '../../components/header/landingheader';
+import { BottomBar } from '@/components/bottombar/BottomBar';
 
 
 export default function Page_1() {
@@ -21,7 +22,10 @@ export default function Page_1() {
         <div className='flex '>
           <div className='w-[480px]  h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 md:pt-16' onClick={() => { setIsOpen(false) }}>
             <div className='flex justify-center items-center w-full h-screen'>
-                <h1 className='text-5xl'>Hello page-1</h1>
+              <h1 className='text-5xl'>Hello page-1</h1>
+            </div>
+            <div className='fixed bottom-0 left-0 sm:w-[480px] w-full bg-gradient-to-r from-purple-500 to-pink-500'>
+              <BottomBar />
             </div>
           </div>
           <div className='max-sm:hidden border-l-4 border-[#cacaca] flex w-[65%] justify-center items-center '>

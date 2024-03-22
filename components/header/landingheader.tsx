@@ -46,7 +46,8 @@ export function Landingheader() {
                     <button className='border-2 border-blue-700 px-6 py-1 rounded-md' >Cash</button>
                 </div>
             </div>
-            <div ref={toggleRef} className={`bg-white fixed top-0 left-0 w-[300px] h-full z-50 overflow-hidden transition-all duration-300 ${isOpen ? 'sidebar-open' : 'sidebar-closed'}`} onClick={handleToggleClick}>
+            {isOpen && <div className="fixed top-0 left-0 w-full h-full bg-black opacity-80 z-40" />}
+            <div ref={toggleRef} className={`bg-white fixed top-0 left-0 w-[280px] h-full z-50 overflow-hidden transition-all duration-300 ${isOpen ? 'sidebar-open' : 'sidebar-closed'}`} onClick={handleToggleClick}>
                 <div className='flex flex-col justify-start gap-5 py-10 px-5'>
                     <Link href='/page-1'>
                         <div className='hover:bg-amber-200 p-5 cursor-pointer'>
@@ -63,3 +64,4 @@ export function Landingheader() {
         </header >
     );
 }
+

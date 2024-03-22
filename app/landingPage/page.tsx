@@ -2,11 +2,11 @@
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import Slider from 'react-slick'
-import Header from '../header/header';
+import Header from '../../components/header/header';
 import logo from '../../public/assets/images/logo.png'
 import Link from 'next/link';
-import { Landingheader } from '../header/landingheader';
-import { BottomBar } from '../bottombar/BottomBar';
+import { Landingheader } from '../../components/header/landingheader';
+import { BottomBar } from '../../components/bottombar/BottomBar';
 
 export default function LandingPage() {
     let settings = {
@@ -80,7 +80,7 @@ export default function LandingPage() {
             <Landingheader />
             <section>
                 <div className='flex '>
-                    <div className='w-[480px]  h-screen overflow-y-auto scrollbar-thin scrollbar-thumb scrollbar-track md:pt-16'>
+                    <div className='w-[480px] pb-20  h-screen overflow-y-auto scrollbar-thin scrollbar-thumb scrollbar-track md:pt-16'>
                         <div className='p-4'><div className='text-18px font-semibold py-4'>
                             <h1>Our Tournaments</h1>
                         </div>

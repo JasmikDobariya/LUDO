@@ -3,11 +3,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import logo from "../public/assets/images/logo.png";
 import Image from "next/image";
-import Header from "./header/header";
+import Header from "../components/header/header";
 import Slider from "react-slick";
 import { useEffect, useState } from "react";
 import LoginPage from "./loginPage/page";
-import { BottomBar } from "./bottombar/BottomBar";
+import { BottomBar } from "../components/bottombar/BottomBar";
 
 export default function Home() {
   let settings = {
@@ -93,7 +93,7 @@ export default function Home() {
 
       <section>
         <div className="flex ">
-          <div className="w-[480px] max-h-screen overflow-y-auto scrollbar-thin scrollbar-thumb scrollbar-track md:pt-16">
+          <div className="w-[480px] pb-20 max-h-screen overflow-y-auto scrollbar-thin scrollbar-thumb scrollbar-track md:pt-16">
             <Header onLoginClick={handleLoginClick} onLogoClick={handleLogoClick} />
             {showHome ? (
               <div className="p-4">
@@ -125,8 +125,11 @@ export default function Home() {
                   <div>
                     <Image src={logo} width={210} height={210} alt="/" />
                   </div>
+                  <div>
+                    <Image src={logo} width={210} height={210} alt="/" />
+                  </div>
                 </div>
-                <div className="slider-container mt-5 md:pb-24 pb-10  ">
+                <div className="slider-container mt-5 md:pb-24   ">
                   <Slider {...settings}>
                     <div>
                       <Image src={logo} alt="/" />
@@ -135,6 +138,9 @@ export default function Home() {
                       <Image src={logo} alt="/" />
                     </div>
                   </Slider>
+                </div>
+                <div>
+                  <Image src={logo} width={210} height={210} alt="/" />
                 </div>
                 <div className="fixed bottom-0 left-0 sm:w-[480px] w-full bg-gradient-to-r from-purple-500 to-pink-500">
                   {/* <div
