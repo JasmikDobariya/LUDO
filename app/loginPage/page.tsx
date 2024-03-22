@@ -16,14 +16,14 @@ export default function LoginPage() {
                             <div className='bg-slate-400 sm:w-28 flex items-center p-2 text-center '>
                                 <span>+91</span>
                             </div>
-                            <div className=' '>
+                            <div className=''>
                                 <input type="text" className='p-2' />
                             </div>
                         </div>
                     </div>
-                    <Link href='/landingPage' className='w-[75%]'>
-                        <div className='bg-blue-400  text-center font-semibold p-2 cursor-pointer hover:bg-blue-800 hover:text-white'>
-                            <button>Continue</button>
+                    <Link href='/landingPage' className=' '>
+                        <div className='bg-blue-400 w-full  text-center  font-semibold p-2 cursor-pointer hover:bg-blue-800 hover:text-white'>
+                            <span className=''>Continue</span>
                         </div>
                     </Link>
                 </div>
