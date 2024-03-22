@@ -98,7 +98,8 @@ export default function Home() {
             <Image src={logoFire} width={210} height={210} alt="/" />
           </div>
           <div className="flex justify-center items-center w-screen h-screen ">
-            <div className={`w-[480px] max-h-screen overflow-y-auto scrollbar-thin border-4 border-solid rounded-xl border-[#94a2cc] scrollbar-thumb scrollbar-track md:pt-16 ${showHome ? 'pb-20' : ''}`}>
+            <div className={`w-[480px] max-h-screen overflow-y-auto scrollbar-thin border-4 border-solid rounded-xl border-[#94a2cc] scrollbar-thumb scrollbar-track pt-16 ${showHome ? 'pb-20' : ''}`}>
+              
               <Header onLoginClick={handleLoginClick} onLogoClick={handleLogoClick} />
               {showHome ? (
                 <div className="">
